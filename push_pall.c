@@ -1,8 +1,8 @@
 #include "monty.h"
 
 /**
- * open_file - opens file
- * @file_name: the file name
+ * open_file - open file
+ * @file_name: file namepath
  * Return: void
  */
 
@@ -19,8 +19,8 @@ void open_file(char *file_name)
 
 
 /**
- * read_file - reads file
- * @fd: pointer to the descriptor
+ * read_file - read file
+ * @fd: pointer to the file descriptors
  * Return: void
  */
 
@@ -39,13 +39,13 @@ void read_file(FILE *fd)
 
 
 /**
- * parse_line - Separates each line into tokens
+ * parse_line - Separate each line into tokens to determine
  * which function to call
- * @buffer: line from file
- * @line_number: line number
- * @format:  storage format. If 0 Nodes will be entered as a stack.
- * if 1 node will be entered as a queue.
- * Return: Returns 0 if opcode is stack. 1 if queue.
+ * @buffer: line from files
+ * @line_number: the line numbers
+ * @format:  the storage format, if 0 Nodes will be entered as a stack.
+ * if 1 nodes will be entered as a queue.
+ * Return: Returns 0 if the opcode is stack. 1 if queue.
  */
 
 int parse_line(char *buffer, int line_number, int format)
@@ -72,11 +72,11 @@ int parse_line(char *buffer, int line_number, int format)
 
 /**
  * find_func - find appropriate function for the opcode
- * @opcode: opcode
- * @value: argument of opcode
- * @format:  storage format. If 0 Nodes will be entered as a stack.
- * @ln: line number
- * if 1 node will be entered as a queue.
+ * @opcode: the opcode
+ * @value: argument of the opcode
+ * @format:  the storage format, if 0 Nodes will be entered as a stack.
+ * @ln: line numbers
+ * if 1 nodes will be entered as a queue.
  * Return: void
  */
 void find_func(char *opcode, char *value, int ln, int format)
@@ -120,13 +120,13 @@ void find_func(char *opcode, char *value, int ln, int format)
 
 
 /**
- * call_fun - Calls for required function.
- * @func: Pointer to the called function
+ * call_fun - Call required function.
+ * @func: Pointer to function that is about to be called.
  * @op: string representing opcode.
  * @val: string representing numeric value.
- * @ln: line numeber for the instruction.
- * @format: Format specifier. If 0 Nodes will be entered as a stack.
- * if 1 node will be entered as a queue.
+ * @ln: line numeber for instruction.
+ * @format: Format specifier, if 0 Nodes will be entered as a stack.
+ * if 1 nodes will be entered as a queue.
  */
 void call_fun(op_func func, char *op, char *val, int ln, int format)
 {
